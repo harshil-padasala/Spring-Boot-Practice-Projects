@@ -5,9 +5,9 @@ import com.springboot.project.service.EmployeeService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 public class EmployeeController {
@@ -22,5 +22,15 @@ public class EmployeeController {
     public Employee saveEmployee(@RequestBody Employee emp) {
         LOGGER.info("Saved new Employee Record.");
         return employeeService.saveEmployee(emp);
+    }
+
+    @GetMapping("/employee/{id}")
+    public Employee getEmployeeByEmpId(@PathVariable Integer id) {
+        return employeeService.getEmployeeByEmpId(id);
+    }
+
+    @GetMapping("/employees")
+    public List<Employee> getAllEmployeesRecord() {
+        return employeeService.getAllEmployeesRecord();
     }
 }
