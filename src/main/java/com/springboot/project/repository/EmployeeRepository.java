@@ -9,4 +9,6 @@ public interface EmployeeRepository extends JpaRepository<Employee, Long> {
 
     // Method for finding EmployeeId by empId
     public Employee findByEmpId(Integer id);
+
+    public Employee deleteByEmpId(Integer id);
 }

@@ -38,4 +38,15 @@ public class EmployeeController {
     public Employee updateEmployee(@RequestBody Employee emp) {
         return employeeService.updateEmployee(emp);
     }
+
+    @DeleteMapping("/employee/{id}")
+    public Employee deleteEmployeeByEmpId(@PathVariable Integer id) {
+        return employeeService.deleteEmployeeByEmpId(id);
+    }
+
+    @DeleteMapping("/employee")
+    public String deleteAllEmployee() {
+        employeeService.deleteAll();
+        return "All Record Deleted Successfully.";
+    }
 }

@@ -25,4 +25,14 @@ public class Employee {
 
     private Integer empId;
 
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", emailId='" + emailId + '\'' +
+                ", empId=" + empId +
+                '}';
+    }
 }
