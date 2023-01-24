@@ -33,4 +33,9 @@ public class EmployeeController {
     public List<Employee> getAllEmployeesRecord() {
         return employeeService.getAllEmployeesRecord();
     }
+
+    @PutMapping("/employee")
+    public Employee updateEmployee(@RequestBody Employee emp) {
+        return employeeService.updateEmployee(emp);
+    }
 }
