@@ -1,21 +1,22 @@
 package com.springboot.project.service;
 
 import com.springboot.project.entity.Employee;
-import com.springboot.project.repository.EmployeeRepository;
+import com.springboot.project.error.EmployeeNotFoundException;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface EmployeeService {
 
     Employee saveEmployee(Employee emp);
 
-    Employee getEmployeeByEmpId(Integer id);
+    Optional<Employee> getEmployeeByEmpId(Long id) throws EmployeeNotFoundException;
 
-    List<Employee> getAllEmployeesRecord();
+    Optional<List<Employee>> getAllEmployeesRecord();
 
-    Employee updateEmployee(Employee emp);
+    void updateEmployee(Employee emp);
 
-    Employee deleteEmployeeByEmpId(Integer id);
+    void deleteEmployeeByEmpId(Long id) throws EmployeeNotFoundException;
 
     void deleteAll();
 }

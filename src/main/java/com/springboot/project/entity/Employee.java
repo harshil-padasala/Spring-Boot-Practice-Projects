@@ -14,8 +14,8 @@ import lombok.Setter;
 public class Employee {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    @Column(name = "id", nullable = false)
-    private Long id;
+    @Column(name = "emp_id", nullable = false)
+    private Long empId;
 
     private String firstName;
 
@@ -23,16 +23,13 @@ public class Employee {
 
     private String emailId;
 
-    private Integer empId;
-
     @Override
     public String toString() {
         return "Employee{" +
-                "id=" + id +
+                ", empId=" + empId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", emailId='" + emailId + '\'' +
-                ", empId=" + empId +
                 '}';
     }
 }
